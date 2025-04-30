@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  padding-top: 60px;
   font-family: "Fugaz One", cursive;
-  background-color: #3b2c1f;
+  background: url('helmets.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #3B3273;
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -16,16 +17,15 @@ body {
 }
 
 .content {
-  padding: 5px;
-  background-color: #3b2c1f;
-  margin: 5px auto;
+  padding: 20px;
+  background-color: transparent;  /* No background color */
+  margin: 20px auto;
   max-width: 1200px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 header {
-background-color: #201102;
+  background: linear-gradient(to bottom, #3B3273, transparent);
   padding: 10px 7px;
   color: #ffffff;
   font-size: 20px;
@@ -34,13 +34,14 @@ background-color: #201102;
   align-items: center;
   z-index: 9999;
   width: 100%;
-  position: fixed; /* Make it stick at the top */
+  margin-top: auto; 
+  box-sizing: border-box;
   top: 0;
   left: 0;
   transition: top 0.3s; /* Smooth hide/show */
-  box-sizing: border-box;
 }
 
+/* Center the header content on smaller screens */
 header > div {
   display: flex;
   flex-wrap: wrap;
@@ -63,8 +64,9 @@ header a:hover {
   header {
     flex-direction: column;
     text-align: center;
-    padding: 15px 10px; /* ✅ Slightly bigger padding for touch screens */
+    padding: 10px 0; /* Reduced padding to remove space at the top */
     gap: 8px;
+    margin-top: 0; /* Make sure there's no margin above */
   }
 
   header > div {
@@ -81,6 +83,7 @@ header a:hover {
 @media (max-width: 480px) {
   header {
     font-size: 16px;
+    padding: 8px 0; /* Further reduce padding for smaller screens */
   }
 
   header a {
@@ -88,53 +91,67 @@ header a:hover {
   }
 }
 
+
 .items {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  width: calc(100% - 100px);
-  margin: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  width: 90%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
 .header-row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  background-color: #2c1905;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #3B3273;
   padding: 10px;
   height: 50px;
   font-weight: bold;
   text-align: center;
-  border: 3px solid #000000;
+  border: 3px #230f86;
   border-radius: 5px;
   align-items: center;
 }
 
 .item-card {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-  font-size: larger;
-  background-color: #352518;
-  padding: 10px;
-  border: 3px solid #1a0d01;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #13055a;
   text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.item-card:hover {
+  transform: scale(1.03);
 }
 
 .item-image {
-  width: 140px;
+  width: 120px;
   height: auto;
-  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.item-name,
+.item-price,
+.item-level,
+.item-location,
+.item-reputation {
+  margin: 5px 0;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
 }
 
 .header-row p,
 .item-card p {
   margin: 0;
   padding: 5px 0;
-  border-right: 2px solid #201102;
 }
 
 .header-row p:last-child,
@@ -143,23 +160,31 @@ header a:hover {
 }
 
 footer {
-  font-family: "Poppins", sans-serif;
-  background-color: #201102;
+  background-color: #3B3273;
+  background: linear-gradient(to top, #3B3273, transparent);
   text-align: center;
-  padding: 10px;
-  color: #ffffff;
+  margin-top: auto; 
+  left: 0;
+  bottom: 0;
+  z-index: 100;
   width: 100%;
-  margin-top: auto;
+}
+
+/* Footer text styling */
+footer p {
+  margin: 13px 0;
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
 }
 
 footer a {
-  color: #ffffff;
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #ffffff;
+  text-decoration: underline;
 }
+
 /* Tablet screen - medium devices */
 @media (max-width: 992px) {
   .header-row,
@@ -207,4 +232,39 @@ footer a:hover {
   .item-image {
     width: 60px;
   }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the whole group */
+  align-items: center;     /* Center vertically if needed */
+  gap: 15px;               /* Space between the select boxes */
+  margin: 20px auto;
+  text-align: center;
+}
+
+.filters select {
+  background-color: #512786;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 5px #13055a;
+  transition: all 0.3s ease;
+  text-align: center;       /* Aligns text inside */
+  text-align-last: center;  /* Ensures the selected option is centered in Chrome/Firefox */
+  max-width: 200px;         /* Sets a max width to prevent the dropdowns from being too long */
+  width: 100%;              /* Ensures they scale up until the max-width */
+}
+
+/* Hover state for the select dropdown */
+.filters select:hover {
+  background-color: #4c3ca3;
+  border-color: #13055a;
 }

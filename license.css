@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: "Fugaz One", cursive;
+  font-weight: 400;
+  background: url('background3.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #3B3273;
+  color: #ffffff;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+header,
+footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  background-color: #3B3273;
+  z-index: 1000;
+  color: white;
+}
+
+/* Header */
+header {
+  top: 0;
+  padding: 10px 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #3B3273, transparent);
+  box-sizing: border-box;
+}
+
+header div {
+  flex: 1;
+  text-align: left;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+main {
+  flex: 1 0 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 140px;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+}
+
+main h1,
+main h2 {
+  color: #ffffff;
+}
+
+main a {
+  color: #8572ff;
+}
+
+/* Footer */
+footer {
+  bottom: 0;
+  text-align: center;
+  padding: 10px 0;
+  background: linear-gradient(to top, #3B3273, transparent);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  header,
+  footer {
+    position: static !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+  }
+
+  header div {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header a {
+    margin: 5px 0;
+  }
+  main h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+  
+  main h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;  
+  }
+  
+}

@@ -1,0 +1,267 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #3B3273;
+  font-family: "Fugaz One", cursive;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1rem;
+  overflow-x: hidden;
+}
+
+/* The main grid layout for content */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+  gap: 1rem; /* Gap between grid items */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+
+/* Styling for the header (fixed at top) */
+header {
+  background-color: #3B3273;
+  background: linear-gradient(to bottom, #3B3273, transparent);
+  position: fixed;
+  padding: 10px 7px;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: top 0.3s; /* Smooth hide/show effect */
+  box-sizing: border-box;
+}
+
+header > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries for header responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 10px; /* Adjust padding for better touch interaction */
+    gap: 8px;
+  }
+
+  header > div {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  header a {
+    margin: 5px 0;
+    font-size: 16px; /* Increase font size for better readability */
+  }
+}
+
+/* Styles for very small screens (e.g., iPhone SE, max-width 480px) */
+@media (max-width: 480px) {
+  header {
+    font-size: 18px; /* Increase overall header font size */
+    padding: 15px 10px; /* Adjust padding for small devices */
+  }
+
+  header a {
+    font-size: 16px; /* Increase link font size for better touch interaction */
+  }
+}
+
+/* Container for centering content */
+.container {
+  margin: 5px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Logo styling */
+.logo {
+  width: 420px;
+  height: auto;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Button grid block styling */
+.buttons-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 15px;
+  row-gap: 20px;
+  justify-content: center;
+  padding-left: 4rem;
+  padding-right: 2rem;
+  margin: 0 auto;
+}
+
+/* Category button styling */
+.category-btn {
+  background-color: #ffffff;
+  color: #201102;
+  padding: 10px;
+  border: 4px solid #201102;
+  border-radius: 40px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 95px;
+  height: 95px;
+  text-decoration: none;
+  flex-direction: column;
+}
+
+.category-btn img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  margin: auto;
+  transition: opacity 0.3s;
+}
+
+.category-btn:hover {
+  background-color: #201102;
+  color: #ffffff;
+}
+
+.category-btn:hover img {
+  opacity: 1;
+}
+
+.category-btn::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.category-btn.helmets-btn::after {
+  background-image: url("icons/helmet.png");
+}
+
+.category-btn.bridles-btn::after {
+  background-image: url("icons/bridle.png");
+}
+
+main h1, main h2, main p {
+  margin-top: 0;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  padding-bottom: 140px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 60px;  /* Increased space for header on tablet */
+    padding-bottom: 80px; /* Increased space for footer on tablet */
+  }
+}
+
+@media (max-width: 430px) {
+  main {
+    padding-top: 200px;  /* Increased space for header on tablet */
+    padding-bottom: 80px; /* Increased space for footer on tablet */
+  }
+}
+/* For iPhone SE and smaller devices */
+@media (max-width: 375px) {
+  main {
+    padding-top: 120px !important; /* Adjust the top padding to push content down */
+    padding-bottom: 70px; /* Reduce the bottom padding */
+  }
+}
+
+@media (max-width: 414px) {
+  main {
+    padding-top: 190px !important; /* Adjusted top padding for larger phones */
+    padding-bottom: 60px !important; /* Ensure space for footer */
+  }
+}
+
+footer {
+  background-color: #3B3273;
+  background: linear-gradient(to top, #3B3273, transparent);
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+/* Footer text styling */
+footer p {
+  margin: 13px 0;
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
