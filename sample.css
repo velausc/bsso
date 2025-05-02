@@ -11,6 +11,10 @@ body {
   align-items: center;
 }
 
+body.tops-page {
+  background: url('tops.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
 .main-content {
   padding: 10px;
   align-items: center;
