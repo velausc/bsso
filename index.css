@@ -143,38 +143,32 @@ h2 {
   margin: 0 auto;
 }
 
-/* Category button styling */
 .category-btn {
-  background-color: #ffffff;
-  color: #201102;
-  padding: 10px;
-  border: 4px solid #201102;
-  border-radius: 40px;
-  font-size: 0.8em;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  width: 95px;
-  height: 95px;
-  text-decoration: none;
-  flex-direction: column;
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  border: 3px solid rgba(181, 108, 230, 0.8); /* Softer border for elegance */
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle but noticeable shadow */
+  overflow: hidden;
+  display: block;
+  backdrop-filter: blur(10px); /* Adds contrast behind transparent buttons */
+  background-color: rgba(255, 255, 255, 0.05); /* Transparent white tone, for mild contrast */
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .category-btn img {
-  max-width: 70%;
-  max-height: 70%;
-  object-fit: contain;
-  margin: auto;
-  transition: opacity 0.3s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .category-btn:hover {
-  background-color: #201102;
-  color: #ffffff;
+  transform: scale(1.05); /* Slight pop effect */
+  opacity: 0.85; /* Softer dimming than 0.5 */
 }
+
 
 .category-btn:hover img {
   opacity: 1;
