@@ -1,68 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="index.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-  <title>Better Star Stable Database</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSSO Database</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-  <header>
-    <div>Better Star Stable Database</div>
-    <nav>
-      <a href="donation.html" class="header-link">Buy Us a Coffee!</a>
-      <a href="license.html" class="header-link">License</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="container">
-      <h1>
-        <img src="logo.png" alt="Better Star Stable Database Logo" class="logo" />
-      </h1>
-      <h2>
-        Discover all the locations, prices and more for clothing, horses,
-        hairstyles and makeup in Better Star Stable Online!
-      </h2>
-
-      <div class="buttons-block">
-        <a href="helmets.html" class="category-btn"><img src="icons/helmet.png" alt="Helmets Icon" /> Helmets</a>
-        <a href="bridles.html" class="category-btn"><img src="icons/bridle.png" alt="Bridles Icon" /> Bridles</a>
-        <a href="tops.html" class="category-btn"><img src="icons/top.png" alt="Tops Icon" /> Tops</a>
-        <a href="saddles.html" class="category-btn"><img src="icons/saddle.png" alt="Saddles Icon" /> Saddles</a>
-        <a href="gloves.html" class="category-btn"><img src="icons/gloves.png" alt="Gloves Icon" /> Gloves</a>
-        <a href="saddle_pads.html" class="category-btn"><img src="icons/saddle_pad.png" alt="Saddle Pads Icon" /> Saddle
-          Pads</a>
-        <a href="pants.html" class="category-btn"><img src="icons/pants.png" alt="Pants Icon" /> Pants</a>
-        <a href="decorations.html" class="category-btn"><img src="icons/decoration.png" alt="Decorations Icon" />
-          Decorations</a>
-        <a href="shoes.html" class="category-btn special-gap"><img src="icons/shoes.png" alt="Shoes Icon" /> Shoes</a>
-        <a href="leg_wraps.html" class="category-btn special-gap"><img src="icons/leg_wrap.png" alt="Leg Wraps Icon" />
-          Legwraps</a>
-        <a href="hair.html" class="category-btn"><img src="icons/hair.png" alt="Hair Icon" /> Hairstyles</a>
-        <a href="saddlebags.html" class="category-btn"><img src="icons/saddlebag.png" alt="Saddle Bags Icon" /> Saddle
-          Bags</a>
-        <a href="makeup.html" class="category-btn special-gap"><img src="icons/makeup.png" alt="Makeup Icon" />
-          Makeup</a>
-        <a href="pets.html" class="category-btn special-gap"><img src="icons/pet.png" alt="Pets Icon" /> Pets</a>
-        <a href="accessories.html" class="category-btn special-gap"><img src="icons/accessory.png"
-            alt="Accessories Icon" />
-          Accessories</a>
-        <a href="horses.html" class="category-btn special-gap"><img src="icons/horse.png" alt="Horses Icon" />
-          Horses</a>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Better Star Stable Database</p>
-    <p></p>
-    <p>All rights reserved.</p>
-  </footer>
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom text-dark">
+        <section class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex text-white text-decoration-none">
+            <h3 class="mb-0 mx-3">BSSO Database</h3>
+          </a>
+        </section>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><button type="button" class="btn btn-outline-light mx-1" onclick='location.href="./index.html"'>Home</button></li>
+          <li><button type="button" class="btn btn-outline-light mx-1" onclick='location.href="./coffee.html"'>Buy us a coffee!</button></li>
+          <li><button type="button" class="btn btn-outline-light mx-1" onclick='location.href="./license.html"'>License</button></li>
+        </ul>
+        <section class="col-md-3 text-end">
+          <button type="button" class="btn btn-outline-light me-2 mx-3" onclick='location.href="./admin/login.php"'>Login</button>
+        </section>
+      </header>
+      <main>
+        <section class="container">
+          <section class="container text-center">
+            <section class="row align-items-start animated-row row-delay-1">
+              <a href="item.php?category=helmets" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/helmet.png" alt="Helmets">
+                  <p>Helmets</p>
+                </div>
+              </a>
+              <a href="item.php?category=bridles" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/bridle.png" alt="Bridles">
+                  <p>Bridles</p>
+                </div>
+              </a>
+              <a href="item.php?category=tops" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/top.png" alt="Tops">
+                  <p>Tops</p>
+                </div>
+              </a>
+              <a href="item.php?category=saddles" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/saddle.png" alt="Saddles">
+                  <p>Saddles</p>
+                </div>
+              </a>
+            </section>
+          </section>
+      
+          <section class="container text-center">
+            <section class="row align-items-center animated-row row-delay-2">
+              <a href="item.php?category=gloves" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/gloves.png" alt="Gloves">
+                  <p>Gloves</p>
+                </div>
+              </a>
+              <a href="item.php?category=saddle_pads" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/saddle_pad.png" alt="Saddle Pads">
+                  <p>Saddle Pads</p>
+                </div>
+              </a>
+              <a href="item.php?category=pants" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/pants.png" alt="Pants">
+                  <p>Pants</p>
+                </div>
+              </a>
+              <a href="item.php?category=decorations" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/decoration.png" alt="Decorations">
+                  <p>Decorations</p>
+                </div>
+              </a>
+            </section>
+          </section>
+      
+          <section class="container text-center">
+            <section class="row align-items-center animated-row row-delay-3">
+              <a href="item.php?category=shoes" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/shoes.png" alt="Shoes">
+                  <p>Shoes</p>
+                </div>
+              </a>
+              <a href="item.php?category=legwraps" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/leg_wrap.png" alt="Legwraps">
+                  <p>Legwraps</p>
+                </div>
+              </a>
+              <a href="item.php?category=hairstyles" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/hair.png" alt="Hairstyles">
+                  <p>Hairstyles</p>
+                </div>
+              </a>
+              <a href="item.php?category=saddle_bags" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/saddlebag.png" alt="Saddle Bags">
+                  <p>Saddle Bags</p>
+                </div>
+              </a>
+            </section>
+          </section>
+      
+          <section class="container text-center">
+            <section class="row align-items-end animated-row row-delay-4">
+              <a href="item.php?category=makeup" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/makeup.png" alt="Makeup">
+                  <p>Makeup</p>
+                </div>
+              </a>
+              <a href="item.php?category=pets" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/pet.png" alt="Pets">
+                  <p>Pets</p>
+                </div>
+              </a>
+              <a href="item.php?category=accessories" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/accessory.png" alt="Accessories">
+                  <p>Accessories</p>
+                </div>
+              </a>
+              <a href="item.php?category=horses" class="col mx-2 my-2 text-decoration-none text-dark">
+                <div id="bgChg">
+                  <img src="./img/icons/horse.png" alt="Horses">
+                  <p>Horses</p>
+                </div>
+              </a>
+            </section>
+          </section>
+        </section>
+      </main>      
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top text-white">
+        <p class="col-md-4 mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Better Star Stable Database</p>
+      
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" aria-label="Bootstrap">
+          <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+      
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-white">BSSO Discord</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-white">BSSO DB Discord</a></li>
+        </ul>
+      </footer>
+      
 </body>
-
 </html>
